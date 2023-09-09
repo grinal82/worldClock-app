@@ -1,38 +1,179 @@
-.App {
+body {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  height: 100vh;
+  background: #D9D7DD;
+  width: 100%;
+}
+
+.world-clock-app {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  margin-left: 10rem;
+}
+
+.world-clock-app h1 {
+  align-self: center;
+}
+
+.clock-form {
+  align-self: center;
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cityName-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-family: "Montserrat";
+}
+
+.cityName-wrapper input {
+  width: 180px;
+  margin-top: 20px;
+  height: 20px;
+  font-size: 1.5rem;
+  font-family: "Montserrat";
+}
+
+.timeZone-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-family: "Montserrat";
+}
+
+.timeZone-wrapper input{
+  width: 180px;
+  margin-top: 20px;
+  height: 20px;
+  font-size: 1.5rem;
+  font-family: "Montserrat";
+  
+}
+
+.add-btn {
+  width: 140px;
+  height: 50px;
+  align-self:self-end;
+  font-size: 1.5rem;
+  font-family: "Montserrat";
+}
+
+.clock-container {
+  display: flex;
+  width: 400px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: space-around;
+}
+
+.clock-container h3 {
+  width: 300px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.delete-button {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: ease all .5s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.delete-button:hover {
+  color: red;
+  transform: scale(1.4);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Стили для индивидуальных часов */
+.clock-list {
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1.5rem;
+  margin-left: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.clock {
+  border-radius: 100%;
+  background: #ffffff;
+  font-family: "Montserrat";
+  border: 5px solid white;
+  box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 350px;
+  height: 350px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrap {
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 100%;
+}
+
+.minute,
+.hour {
+  position: absolute;
+  height: 100px;
+  width: 6px;
+  margin: auto;
+  top: -27%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: black;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.minute {
+  position: absolute;
+  height: 130px;
+  width: 4px;
+  top: -38%;
+  left: 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  transform: rotate(90deg);
+}
+
+.second {
+  position: absolute;
+  height: 90px;
+  width: 2px;
+  margin: auto;
+  top: -26%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 4px;
+  background: #FF4B3E;
+  transform-origin: bottom center;
+  transform: rotate(180deg);
+  z-index: 1;
+}
+
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 100px;
+  background: white;
+  border: 2px solid #1b1b1b;
+  border-radius: 100px;
+  margin: auto;
+  z-index: 1;
 }
