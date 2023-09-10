@@ -14,7 +14,7 @@ function InputFC() {
       timezoneOffset,
     };
     setClocks([...clocks, newClock]);
-    // Очистите поля ввода
+    // Очистить поля ввода
     setCityName('');
     setTimezoneOffset(0);
   };
